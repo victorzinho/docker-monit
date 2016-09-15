@@ -1,0 +1,17 @@
+set mailserver localhost
+
+set mail-format {
+  from:    Monit <monit@$HOST>
+  subject: monit alert --  $EVENT $SERVICE
+  message: $EVENT Service $SERVICE
+                Date:        $DATE
+                Action:      $ACTION
+                Host:        $HOST
+                Description: $DESCRIPTION
+
+           Your faithful employee,
+           Monit
+}
+
+set alert victor.gonzalez@geomati.co
+
