@@ -7,11 +7,12 @@
 
 ## Running
 
-Run detached, exposing port 80 and mounting a custom `monit.d` configuration directory:
+Run detached, specifying hostname, exposing port 80 and mounting a custom `monit.d` configuration directory:
 
 ```
-docker run -d -p 2812:2812 -v /path/to/monit.d:/etc/monit.d --name=monit monit
+docker run -h example.com -d -p 2812:2812 -v /path/to/monit.d:/etc/monit.d --name=monit monit
 ```
 
 Get a [minimal monit.d directory](https://github.com/victorzinho/docker-monit/tree/master/monit.d) to start with.
+
 

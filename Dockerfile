@@ -8,8 +8,10 @@ ENV VERSION 5.19.0
 RUN echo "deb http://httpredir.debian.org/debian jessie contrib" >> /etc/apt/sources.list
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -yq wget \
+	&& apt-get install -yq wget exim4 \
   && rm -rf /var/lib/apt/lists/*
+
+RUN sed -i "s#dc_eximconfig_configtype.*#dc_eximconfig_configtype='internet'#" /etc/exim4/update-exim4.conf.conf
 
 RUN cd /usr/local/lib \
     && wget https://mmonit.com/monit/dist/binary/${VERSION}/monit-${VERSION}-linux-x64.tar.gz \
@@ -19,7 +21,7 @@ RUN cd /usr/local/lib \
 
 COPY monitrc /etc/monitrc
 
-ENTRYPOINT [ "monit", "-Ic", "/etc/monitrc" ]
+ENTRYPOINT service exim4 start && monit -Ic /etc/monitrc
 
 EXPOSE 2812
 
