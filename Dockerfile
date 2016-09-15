@@ -16,10 +16,11 @@ RUN sed -i "s#dc_eximconfig_configtype.*#dc_eximconfig_configtype='internet'#" /
 RUN cd /usr/local/lib \
     && wget https://mmonit.com/monit/dist/binary/${VERSION}/monit-${VERSION}-linux-x64.tar.gz \
     && tar xzf monit-${VERSION}-linux-x64.tar.gz \
-    && ln -s "/usr/local/lib/monit-${VERSION}/conf/monitrc" /etc/monitrc \
     && ln -s "/usr/local/lib/monit-${VERSION}/bin/monit" /usr/local/bin/monit
 
 COPY monitrc /etc/monitrc
+
+RUN chmod 0700 /etc/monitrc
 
 ENTRYPOINT service exim4 start && monit -Ic /etc/monitrc
 
