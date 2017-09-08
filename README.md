@@ -1,9 +1,11 @@
 # docker-monit
 [Monit](https://mmonit.com/monit/) installation on top of official [debian:jessie](https://hub.docker.com/_/debian/) image.
 
-## [Automated builds](https://hub.docker.com/r/vicgonco/monit/) 
+## [Automated builds](https://hub.docker.com/r/vicgonco/monit/)
 
-* Latest ([Dockerfile](https://github.com/victorzinho/docker-monit/blob/master/Dockerfile))
+
+* Latest, 5.19.0 ([5.19.0/Dockerfile](https://github.com/victorzinho/docker-monit/blob/master/Dockerfile))
+
 
 ## Running
 

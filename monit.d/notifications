@@ -13,5 +13,5 @@ set mail-format {
            Monit
 }
 
-set alert victor.gonzalez@geomati.co
+set alert your_mail_address@example.com
 
