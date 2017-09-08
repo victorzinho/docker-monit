@@ -4,7 +4,8 @@
 ## [Automated builds](https://hub.docker.com/r/vicgonco/monit/)
 
 
-* Latest, 5.19.0 ([5.19.0/Dockerfile](https://github.com/victorzinho/docker-monit/blob/master/Dockerfile))
+* Latest, 5.23.0 ([5.23.0/Dockerfile](https://github.com/victorzinho/docker-monit/blob/master/5.23.0/Dockerfile))
+* 5.19.0 ([5.19.0/Dockerfile](https://github.com/victorzinho/docker-monit/blob/master/5.19.0/Dockerfile))
 
 
 ## Running
